@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="account.AccountOperation">
+	<select id="selectByCreater" parameterType="String" resultType="Account">
+		select * from account where creator=#{creater};
+	</select>
+	<insert id="insertAccount" parameterType="Account" 
+	useGeneratedKeys="true" keyProperty="id">
+		insert into account(creator,time,kind,amount,sum,locate) values(#{creator},#{time},#{kind},#{amount},#{sum},#{locate});
+	</insert>
+	<delete id="deleteAccount" parameterType="Account">
+		delete from account where creator=#{creator} and time=#{time} and amount=#{amount};
+	</delete>
+</mapper>

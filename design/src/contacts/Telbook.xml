@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="contacts.TelbookOperation">
+	<select id="selectByCreater" parameterType="String" resultType="Telbook">
+		select * from telbook where creater=#{creater};
+	</select>
+	<insert id="addTelbook" parameterType="Telbook">
+		insert into telbook values(#{creater},#{name},#{phone});
+	</insert>
+	<update id="updateTelbook" parameterType="Telbook">
+		update telbook set creater=#{creater},name=#{name},phone=#{phone} where creater=#{creater};
+	</update>
+	<delete id="deleteTelbook" parameterType="Telbook">
+		delete from telbook where creater=#{creater} and name=#{name} and phone=#{phone};
+	</delete>
+</mapper>

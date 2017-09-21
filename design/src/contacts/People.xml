@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="contacts.PeopleOperation">
+	<select id="selectById" parameterType="String" resultType="People">
+		select * from people where id=#{id};
+	</select>
+	<insert id="addPeople" parameterType="People" keyProperty="id">
+		insert into people(id,name,address,phone,image) values(#{id},#{name},#{address},#{phone},#{image});
+	</insert>
+	<update id="updatePeople" parameterType="People">
+		update people set id=#{id},name=#{name},address=#{address},phone=#{phone},image=#{image} where id=#{id};
+	</update>
+	<delete id="deletePeople" parameterType="String">
+		delete from people where id=#{id};
+	</delete>
+</mapper>

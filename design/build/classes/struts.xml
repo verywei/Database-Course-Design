@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+	
+<struts>
+<constant name="struts.devMode" value="true" />
+<constant name="struts.multipart.maxSize" value="20971520" />
+<package name="contacts" extends="struts-default">
+	<action name="telbook_get" class="server.ContactOperation" method="execute">
+		<result name="index">/WEB-INF/content/index.jsp</result>
+		<result name="success">/WEB-INF/content/success.jsp</result>
+		<result name="error">/WEB-INF/content/error.jsp</result>
+	</action>
+	<action name="telbook_insert" class="server.ContactOperation" method="insert">
+		<result name="success">/WEB-INF/content/signsuccess.jsp</result>
+		<result name="error">/WEB-INF/content/error.jsp</result>
+	</action>
+	<action name="telbook_delete" class="server.ContactOperation" method="delete">
+		<result name="success">/WEB-INF/content/signsuccess.jsp</result>
+		<result name="error">/WEB-INF/content/error.jsp</result>
+	</action>
+	<action name="login" class="server.Login">
+		<result name="error">/WEB-INF/content/error.jsp</result>
+		<result>/WEB-INF/content/success.jsp</result>
+	</action>
+	<action name="account_get" class="server.AccountOperation" method="execute">
+		<result name="success">/WEB-INF/content/accountget.jsp</result>
+	</action>
+	<action name="account_insert" class="server.AccountOperation" method="insert">
+		<result name="success">/WEB-INF/content/signsuccess.jsp</result>
+	</action>
+	<action name="test">
+	<result>/WEB-INF/content/Test.jsp</result>
+	</action>
+	<action name="upload" class="server.UploadActioin">
+	<param name="savePath">D:/</param>
+	<result>/WEB-INF/content/uploadsuccess.jsp</result>
+	</action>
+	<action name="fileup">
+	<result>/WEB-INF/content/fileup.jsp</result>
+	</action>
+</package>
+
+
+</struts>
