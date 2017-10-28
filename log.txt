@@ -1,4 +1,8 @@
 wangwei
 hahahh
+<<<<<<< HEAD
 repare a bug
 hahahha
+=======
+
+>>>>>>> parent of 1b77a5e... 修改bug
